@@ -14,3 +14,7 @@ export async function getUserByName(name: string) {
     .where(sql`lower(${users.name}) = ${name}`);
   return result;
 }
+
+export async function deleteUsers() {
+  await db.execute(sql`TRUNCATE TABLE users;`);
+}

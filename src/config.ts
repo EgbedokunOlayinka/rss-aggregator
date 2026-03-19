@@ -58,7 +58,6 @@ function writeConfig(cfg: Config): void {
 
 function getConfigFilePath() {
   try {
-    // return path.join(process.cwd(), './.gatorconfig.json');
     return path.join(os.homedir(), '.gatorconfig.json');
   } catch (e) {
     console.error(e);
