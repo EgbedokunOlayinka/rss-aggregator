@@ -3,7 +3,11 @@ import {
   registerCommand,
   runCommand,
 } from './commands/commands';
-import {handlerFollow, handlerGetFollowing} from './commands/feedFollows';
+import {
+  handlerFollow,
+  handlerGetFollowing,
+  handlerUnfollow,
+} from './commands/feedFollows';
 import {
   handlerAddFeed,
   handlerFetchFeed,
@@ -31,6 +35,7 @@ async function main() {
 
   registerCommand(commands, 'follow', loggedIn(handlerFollow));
   registerCommand(commands, 'following', loggedIn(handlerGetFollowing));
+  registerCommand(commands, 'unfollow', loggedIn(handlerUnfollow));
 
   const args = process.argv.slice(2);
   if (!args.length) {
