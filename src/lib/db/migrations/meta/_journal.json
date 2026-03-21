@@ -8,6 +8,27 @@
       "when": 1773947074381,
       "tag": "0000_rapid_big_bertha",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1773956680096,
+      "tag": "0001_powerful_mister_fear",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1773993089459,
+      "tag": "0002_petite_mariko_yashida",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1773999896889,
+      "tag": "0003_medical_oracle",
+      "breakpoints": true
     }
   ]
 }

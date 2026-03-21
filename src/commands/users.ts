@@ -1,5 +1,10 @@
-import {setUser} from 'src/config';
-import {createUser, deleteUsers, getUserByName} from 'src/lib/db/queries/users';
+import {readConfig, setUser} from 'src/config';
+import {
+  createUser,
+  deleteUsers,
+  getUserByName,
+  getUsers,
+} from 'src/lib/db/queries/users';
 
 export async function handlerLogin(cmdName: string, ...args: string[]) {
   if (!args?.length) {
@@ -32,6 +37,16 @@ export async function handlerRegister(cmdName: string, ...args: string[]) {
   setUser(username);
   console.log('User created!');
   console.log(res);
+}
+
+export async function handlerGetUsers(cmdName: string, ...args: string[]) {
+  const users = await getUsers();
+  const config = readConfig();
+  users?.forEach(user =>
+    console.log(
+      `* ${user.name}${config?.currentUserName === user.name ? ' (current)' : ''}`,
+    ),
+  );
 }
 
 export async function handlerReset(cmdName: string, ...args: string[]) {
